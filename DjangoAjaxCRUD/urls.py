@@ -1,8 +1,7 @@
-"""
-URL configuration for DjangoAjaxCRUD project.
+"""DjangoAjaxCRUD URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/4.2/topics/http/urls/
+    https://docs.djangoproject.com/en/2.2/topics/http/urls/
 Examples:
 Function views
     1. Add an import:  from my_app import views
@@ -17,6 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from CRUDAPP import views
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', views.HomePage,name="home"),
+    path('/insert_student', views.InsertStudent,name="insert"),
+    path('/update_all', views.update_all,name="update_all"),
+    path('/delete_data', views.delete_data,name="delete_data"),
 ]
